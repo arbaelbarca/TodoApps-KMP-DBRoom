@@ -78,7 +78,19 @@ fun HomeScreen(navController: NavController) {
                 ShimmerEffect()
             },
             onSuccess = { itemList ->
-                TaskList(taskViewModel, listTaskItem = itemList.toMutableList())
+                if (itemList.isNotEmpty())
+                    TaskList(taskViewModel, listTaskItem = itemList.toMutableList())
+                else {
+                    Box(
+                        modifier = Modifier.fillMaxSize()
+                    ) {
+                        Text(
+                            modifier = Modifier
+                                .align(Alignment.Center),
+                            text = "Data Empty"
+                        )
+                    }
+                }
             },
             onError = {
                 Box(

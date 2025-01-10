@@ -27,9 +27,7 @@ class TaskViewModel(
             delay(1500)
             try {
                 val listTask = taskRepository.getAllTask().reversed()
-                if (listTask.isNotEmpty())
-                    mutableStateTask.emit(UiState.Success(listTask))
-                else mutableStateTask.emit(UiState.Error("Empty data"))
+                mutableStateTask.emit(UiState.Success(listTask))
             } catch (e: Exception) {
                 e.printStackTrace()
                 mutableStateTask.emit(UiState.Error("Error Exception data"))
