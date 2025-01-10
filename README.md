@@ -19,3 +19,22 @@ We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public S
 If you face any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
 
 You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
+
+# You can check this video
+
+<?php
+
+// Add oEmebed support for Google Drive Video
+wp_embed_register_handler(
+	'google-drive-videos',
+	'#https://drive.google.com/file/d/1Ax3n2X0evG73Kk_ccsw-DDaEJrq4qmuE/view$#i',
+	'pb_add_oembed_handler_dgvideo'
+);
+
+function pb_add_oembed_handler_dgvideo( $matches, $attr, $url, $rawattr ) {
+	$embed = sprintf(
+		'<iframe src="https://drive.google.com/file/d/1Ax3n2X0evG73Kk_ccsw-DDaEJrq4qmuE/view" width="640" height="480"></iframe>',
+			esc_attr($matches[1])
+	);
+	return $embed;
+}
