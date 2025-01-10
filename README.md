@@ -1,4 +1,6 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop.
+
+## This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop.
+
 
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
@@ -22,19 +24,25 @@ You can open the web application by running the `:composeApp:wasmJsBrowserDevelo
 
 # You can check this video
 
-<?php
+[![Tonton videonya]
+(https://github.com/arbaelbarca/TodoApps-KMP-DBRoom/blob/master/screen-recording-2025-01-10-at-130824_dPhtSSRk.mp4)
 
-// Add oEmebed support for Google Drive Video
-wp_embed_register_handler(
-	'google-drive-videos',
-	'#https://drive.google.com/file/d/1Ax3n2X0evG73Kk_ccsw-DDaEJrq4qmuE/view$#i',
-	'pb_add_oembed_handler_dgvideo'
-);
 
-function pb_add_oembed_handler_dgvideo( $matches, $attr, $url, $rawattr ) {
-	$embed = sprintf(
-		'<iframe src="https://drive.google.com/file/d/1Ax3n2X0evG73Kk_ccsw-DDaEJrq4qmuE/view" width="640" height="480"></iframe>',
-			esc_attr($matches[1])
-	);
-	return $embed;
-}
+## Technology
+
+- [x] DB Room
+- [x] Koin (DI)
+- [x] View Model and State Flow
+- [x] Library Date & Time for KMP
+
+<!-- CONTACT -->
+## Contact
+
+My Apps : https://bit.ly/appsarba
+My Github :  https://github.com/arbaelbarca  
+My Linkedin:  https://www.linkedin.com/in/muhamad-arba-365108131
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
