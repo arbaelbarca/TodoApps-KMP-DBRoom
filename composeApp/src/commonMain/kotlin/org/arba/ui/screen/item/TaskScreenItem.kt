@@ -95,7 +95,6 @@ fun TaskItem(
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.Start
     ) {
-
         Card(
             colors = CardDefaults.cardColors(Color.White),
             modifier = Modifier

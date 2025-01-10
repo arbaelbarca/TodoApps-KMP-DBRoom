@@ -11,6 +11,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
@@ -107,50 +110,48 @@ fun TaskList(
         getTypePlatform() == Type.Dekstop
     }
 
-//    LazyVerticalGrid(
-//        columns = GridCells.Fixed(if (isDekstop) 3 else 1),
-//        contentPadding = PaddingValues(10.dp),
-//        verticalArrangement = Arrangement.spacedBy(10.dp),
-//        horizontalArrangement = Arrangement.spacedBy(10.dp),
-//    ) {
-//        items(listTaskItem) { item ->
-//            TaskItem(
-//                item,
-//                onChecked = item.isSelectedCheck,
-//                onCheckedChange = { isChecked ->
-//                    println("respon Ischeck $isChecked")
-////                    isCheckItem = isChecked
-//                    item.isSelectedCheck = isChecked // updatestate dalam model
-//                }
-//            )
-//        }
-//
-//    }
-
-    LazyColumn(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(10.dp),
-        verticalArrangement = Arrangement.spacedBy(10.dp)
+    LazyVerticalGrid(
+        columns = GridCells.Fixed(if (isDekstop) 3 else 1),
+        contentPadding = PaddingValues(10.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp),
+        horizontalArrangement = Arrangement.spacedBy(10.dp),
     ) {
-        items(listTaskItem.chunked(if (isDekstop) 3 else 1)) { rowItems ->
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
-            ) {
-                rowItems.forEach { itemsChild ->
-                    TaskItem(
-                        taskItemLocal = itemsChild,
-                        onChecked = itemsChild.isSelectedCheck,
-                        onDeleteItem = {
-                            taskViewModel.deleteTaskItem(itemsChild.id.toLong())
-                        }
-                    )
+        items(listTaskItem) { itemsChild ->
+            TaskItem(
+                taskItemLocal = itemsChild,
+                onChecked = itemsChild.isSelectedCheck,
+                onDeleteItem = {
+                    taskViewModel.deleteTaskItem(itemsChild.id.toLong())
                 }
-
-            }
+            )
         }
+
     }
+
+//    LazyColumn(
+//        modifier = Modifier
+//            .fillMaxSize()
+//            .padding(10.dp),
+//        verticalArrangement = Arrangement.spacedBy(10.dp)
+//    ) {
+//        items(listTaskItem.chunked(if (isDekstop) 3 else 1)) { rowItems ->
+//            Row(
+//                modifier = Modifier.fillMaxWidth(),
+//                horizontalArrangement = Arrangement.spacedBy(10.dp)
+//            ) {
+//                rowItems.forEach { itemsChild ->
+//                    TaskItem(
+//                        taskItemLocal = itemsChild,
+//                        onChecked = itemsChild.isSelectedCheck,
+//                        onDeleteItem = {
+//                            taskViewModel.deleteTaskItem(itemsChild.id.toLong())
+//                        }
+//                    )
+//                }
+//
+//            }
+//        }
+//    }
 }
 
 @Composable

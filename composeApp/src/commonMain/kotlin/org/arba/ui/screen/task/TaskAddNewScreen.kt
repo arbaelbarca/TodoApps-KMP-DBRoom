@@ -1,6 +1,7 @@
 package org.arba.ui.screen.task
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -45,8 +46,11 @@ import org.arba.theme.Gray_Text
 import org.arba.ui.screen.dialog.ShowDatePickerDialog
 import org.arba.ui.screen.dialog.ShowTimePickerDialog
 import org.arba.viewmodel.TaskViewModel
+import org.jetbrains.compose.resources.painterResource
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
+import todoapps.composeapp.generated.resources.Res
+import todoapps.composeapp.generated.resources.baseline_access_time_24
 
 @OptIn(ExperimentalMaterial3Api::class, KoinExperimentalAPI::class)
 @Composable
@@ -201,13 +205,13 @@ fun TaskAddNewScreen(navController: NavController) {
                     .padding(start = 6.dp, end = 15.dp, top = 15.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(
-                    imageVector = Icons.Filled.DateRange,
+                Image(
+                    painter = painterResource(Res.drawable.baseline_access_time_24),
                     contentDescription = "Time"
                 )
 
                 Text(
-                    text = "Time",
+                    text = time.ifEmpty { "Time" },
                     modifier = Modifier.weight(1f)
                         .padding(start = 10.dp),
                 )

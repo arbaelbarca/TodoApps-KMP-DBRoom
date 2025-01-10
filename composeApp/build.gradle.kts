@@ -96,7 +96,6 @@ kotlin {
             //datetime
             api(libs.kotlinx.datetime)
             implementation(libs.kmp.date.time.picker)
-            api("com.mohamedrejeb.calf:calf-ui:0.2.0")
 
             // Room + Sqlite
             implementation(libs.androidx.room.runtime)
