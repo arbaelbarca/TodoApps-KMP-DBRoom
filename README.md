@@ -1,4 +1,6 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop.
+
+## This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop.
+
 
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
@@ -19,3 +21,28 @@ We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public S
 If you face any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
 
 You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
+
+# You can check this video
+
+[![Tonton videonya]
+(https://github.com/arbaelbarca/TodoApps-KMP-DBRoom/blob/master/screen-recording-2025-01-10-at-130824_dPhtSSRk.mp4)
+
+
+## Technology
+
+- [x] DB Room
+- [x] Koin (DI)
+- [x] View Model and State Flow
+- [x] Library Date & Time for KMP
+
+<!-- CONTACT -->
+## Contact
+
+My Apps : https://bit.ly/appsarba
+My Github :  https://github.com/arbaelbarca  
+My Linkedin:  https://www.linkedin.com/in/muhamad-arba-365108131
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
